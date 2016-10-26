@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 
 	document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+sumAll([5, 10]) + "</h3>";*/
-	function diffArray(arr1, arr2) {
+	/*function diffArray(arr1, arr2) {
   		var newArr = [];
   		var longest;
   		debugger;
@@ -62,4 +62,49 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 	document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]) + "</h3>";
+});*/
+
+function convertToRoman(num) {
+	var romanArr= [];
+	var counter = 0;
+	var decrement = 1;
+	debugger;
+	for (var i = num; i> 0; i-decrement){
+		switch(i){
+			case i > 1000:
+			decrement = 1000;
+			romanArr.push("M");
+			break;
+			case i > 500:
+			decrement = 500;
+			romanArr.push("D");
+			break;
+			case i > 100:
+			decrement = 100;
+			romanArr.push("C");
+			break;
+			case i > 50:
+			decrement = 50;
+			romanArr.push("L");
+			break;
+			case i > 10:
+			decrement = 10;
+			romanArr.push("X");
+			break;
+			case i > 5:
+			decrement = 5;
+			romanArr.push("V");
+			break;
+			case i > 1:
+			decrement = 1;
+			romanArr.push("I");
+			default:
+			return "";
+		}
+	} console.log(romanArr)
+ return romanArr;
+}
+
+
+document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+convertToRoman(1001) + "</h3>";
 });
