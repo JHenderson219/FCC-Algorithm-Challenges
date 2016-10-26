@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() { 	
+	//Sum All Numbers in Range
 	/*var anArr = [];
 	function sumAll(arr) {
 		
@@ -28,10 +29,37 @@ document.addEventListener("DOMContentLoaded", function() {
 	document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+sumAll([5, 10]) + "</h3>";*/
 	function diffArray(arr1, arr2) {
   		var newArr = [];
+  		var longest;
+  		debugger;
+  		if (arr1.length >= arr2.length){
+  			longest = arr1.length;
+  		} else{
+  			longest = arr2.length;
+  		}
+  		
+  		if (arr1.length === 0){
+  			return arr2;
+  		} else if (arr2.length === 0){
+  			return arr1;
+  		}
+
+  		for(var i = 0; i<longest; i++){
+  			if (arr2.indexOf(arr1[i]) < 0){
+  				newArr.push(arr1[i]);
+  			} if (arr1.indexOf(arr2[i])<0) {
+  				newArr.push(arr2[i]);
+  			}
+  		
+  		console.log(newArr);
+  		}	
+		newArr = newArr.filter(function(val){
+  			return val !== undefined;
+  		});	
+
   		// Same, same; but different.
   		return newArr;
 }
 
 
-	document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+sumAll([5, 10]) + "</h3>";
+	document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]) + "</h3>";
 });
