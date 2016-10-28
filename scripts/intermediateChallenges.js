@@ -160,7 +160,7 @@ whatIsInAName(
 }*/
 
 //Pig Latin
-function translatePigLatin(str) {
+/*function translatePigLatin(str) {
   // Create variables to be used
   var pigLatin = '';
   var regex = /[aeiou]/gi;
@@ -176,11 +176,42 @@ function translatePigLatin(str) {
   }
 
   return pigLatin;
+}*/
+function pairElement(str) {
+  var startArr = str.toUpperCase().split('');
+  var arr1= [];
+  var arr2 = [];
+  var arr3 = [];
+  var arr4= [];
+  var arr5= [];
+  var finalArr = [];
+  debugger;
+  for (var i=0; i<startArr.length; i++){
+  	console.log(finalArr[i]);
+  	switch (startArr[i]){
+  		case "G":
+  			finalArr.push([startArr[i],"C"]);
+  			break;
+  		case "C":
+  			finalArr.push([startArr[i],"G"]);
+  			break;
+  		case "T":
+  			finalArr.push([startArr[i],"A"]);
+  			break;
+  		case "A":
+  			finalArr.push([startArr[i],"T"]);
+  			break;
+  		default:
+  			break;
+  	}
+  }
+
+
+  return finalArr;
 }
 
 
-
 document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"
-+translatePigLatin("glove") 
++pairElement("GCG")
 + "</h3>";
 });
