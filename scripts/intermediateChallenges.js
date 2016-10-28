@@ -177,15 +177,11 @@ whatIsInAName(
 
   return pigLatin;
 }*/
-function pairElement(str) {
-  var startArr = str.toUpperCase().split('');
-  var arr1= [];
-  var arr2 = [];
-  var arr3 = [];
-  var arr4= [];
-  var arr5= [];
-  var finalArr = [];
+//DNA Pairing
+/*function pairElement(str) {
   debugger;
+  var startArr = str.toUpperCase().split('');
+  var finalArr = [];
   for (var i=0; i<startArr.length; i++){
   	console.log(finalArr[i]);
   	switch (startArr[i]){
@@ -208,10 +204,51 @@ function pairElement(str) {
 
 
   return finalArr;
+}*/
+//Missing Letters
+/*function fearNotLetter(str) {
+	debugger;
+	var arr = [];
+	var otherArr = [];
+	for (var i=0; i<str.length; i++){
+		arr.push(str.charCodeAt(i));
+	}
+	for (var j=0; j<arr.length;j++){
+		console.log(arr[j+1]);
+		console.log(arr[j]+1);
+		if (arr[j+1]>arr[j]+1){
+			otherArr.push(String.fromCharCode(arr[j]+1));
+		}
+	}
+  	str = otherArr.join('');
+  	if (str === ""){
+  		return undefined;
+  	}
+  return str;
+}*/
+
+//Boo who
+/*function booWho(bool) {
+  // What is the new fad diet for ghost developers? The Boolean.
+	if(typeof bool == "boolean"){
+  		return true;
+	}
+	return false;
+}*/
+
+
+function uniteUnique(arr) {
+	debugger;
+	var argArr=[];
+	console.log(arguments);
+	for(var i=0; i<arguments.length;i++){
+
+	}
+  return argArr;
 }
 
 
 document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"
-+pairElement("GCG")
++uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])
 + "</h3>";
 });
