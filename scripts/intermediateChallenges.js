@@ -236,16 +236,22 @@ whatIsInAName(
 	return false;
 }*/
 
-
+//Sorted Union
+/*
 function uniteUnique(arr) {
-	debugger;
-	var argArr=[];
-	console.log(arguments);
-	for(var i=0; i<arguments.length;i++){
-
+	var finalArr =[];
+	for (var i = 0; i<arguments.length; i++){
+		var arrArgs = arguments[i];
+		for (var j = 0; j< arrArgs.length; j++){
+			var indVal = arrArgs[j];
+			if (finalArr.indexOf(indVal) < 0){
+				finalArr.push(indVal);
+			}
+		}
 	}
-  return argArr;
+	return finalArr;
 }
+*/
 
 
 document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"
