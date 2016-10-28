@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
   			return "Failed!";
 		}
 
+//Diff Two Arrays
 	document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+sumAll([5, 10]) + "</h3>";*/
 	/*function diffArray(arr1, arr2) {
   		var newArr = [];
@@ -63,48 +64,104 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]) + "</h3>";
 });*/
-
-function convertToRoman(num) {
+//Roman Numeral Converter
+/*function convertToRoman(num) {
 	var romanArr= [];
 	var counter = 0;
-	var decrement = 1;
+	var numStrArr = num.toString().split('');
+	console.log(numStrArr);
+	var romanOnes= ["","I","II","III","IV","V","VI","VII","VIII","IX"];
+	var romanTens= ["", "X","XX","XXX","XL","L","LX","LXX","LXXX","XC"];
+	var romanHundreds = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"];
+	var romanThousands = ["","M","MM","MMM","MMMM"];
 	debugger;
-	for (var i = num; i> 0; i-decrement){
-		switch(i){
-			case i > 1000:
-			decrement = 1000;
-			romanArr.push("M");
-			break;
-			case i > 500:
-			decrement = 500;
-			romanArr.push("D");
-			break;
-			case i > 100:
-			decrement = 100;
-			romanArr.push("C");
-			break;
-			case i > 50:
-			decrement = 50;
-			romanArr.push("L");
-			break;
-			case i > 10:
-			decrement = 10;
-			romanArr.push("X");
-			break;
-			case i > 5:
-			decrement = 5;
-			romanArr.push("V");
-			break;
-			case i > 1:
-			decrement = 1;
-			romanArr.push("I");
-			default:
-			return "";
-		}
-	} console.log(romanArr)
- return romanArr;
+	console.log(numStrArr.length);
+	switch (numStrArr.length){
+
+		case 1:
+		romanArr.push(romanOnes[numStrArr[0]]);
+		break;
+		case 2:
+		romanArr.push(romanTens[numStrArr[0]]);
+		romanArr.push(romanOnes[numStrArr[1]]);
+		break;
+		case 3:
+		romanArr.push(romanHundreds[numStrArr[0]]);
+		romanArr.push(romanTens[numStrArr[1]]);
+		romanArr.push(romanOnes[numStrArr[2]]);
+		break;
+		
+		case 4:
+		romanArr.push(romanThousands[numStrArr[0]]);
+		romanArr.push(romanHundreds[numStrArr[1]]);
+		romanArr.push(romanTens[numStrArr[2]]);
+		romanArr.push(romanOnes[numStrArr[3]]);
+		break;
+
+		default:
+		alert('Unexpected input!');
+		break;
+	}
+ return romanArr.join('');
 }
 
 
-document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+convertToRoman(1001) + "</h3>";
+document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+convertToRoman(649) + "</h3>";
+});*/
+	//Wherefore Art Thou
+	/*function whatIsInAName(collection, source) {
+  // What's in a name?
+  		var arr = [];
+  // Only change code below this line
+	var srcKeys = Object.keys(source);
+	return collection.filter(function(obj){
+		for (var i=0; i < srcKeys.length; i++){
+			if(!obj.hasOwnProperty(srcKeys[i]) || obj[srcKeys[i]] !== source[srcKeys[i]]){
+				return false;
+			}
+		}
+		return true;
+	});
+  //console.log(Object.keys(collection[0])); //get this, loop using 0 to get number of keys 
+  //console.log(source[targets[0]]); // get this, loop using 0 to check all values
+  
+  
+  // Only change code above this line
+  		return arr;
+	}
+document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+
+whatIsInAName(
+			[{ first: "Romeo", last: "Montague" }, 
+				{ first: "Mercutio", last: null }, 
+				{ first: "Tybalt", last: "Capulet" }, 
+				{ first: "Juliet", last: "Capulet" }],
+				{ first: "Juliet", last: "Capulet" }) 
++ "</h3>";
+});*/
+//Search and Replace
+
+/*function myReplace(str, before, after) {
+  var target = str.indexOf(before); //strArr.indexOf(before)
+  var length = before.length;
+  var newAfter;
+  if (before[0] === before[0].toUpperCase()){
+  	newAfter = after[0].toUpperCase()+after.slice(1, after.length);
+  	console.log(after[0]);
+  }
+  if (before[0] === before[0].toLowerCase()){
+  	newAfter = after[0].toLowerCase()+after.slice(1, after.length);
+  }
+  strArr = str.split(' ');
+  console.log(before[0]);
+  strArr.splice(strArr.indexOf(before),1,newAfter);
+  newStr = strArr.join(" ");
+  console.log(strArr);
+  return newStr;
+}*/
+
+
+
+document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"
++myReplace("His name is Tom", "Tom", "john") 
++ "</h3>";
 });
