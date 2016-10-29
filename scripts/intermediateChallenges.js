@@ -252,9 +252,39 @@ function uniteUnique(arr) {
 	return finalArr;
 }
 */
+//Convert HTML Entities
+function convertHTML(str) {
+  // &colon;&rpar;
+  var htmlChars = /'"&<>/gi;
+  debugger;
+  var newStr = str.replace(htmlChars,function(char){
+  	switch(char){
+  		case "'":
+  			char="&apos";
+  			break;
+  		case '"':
+  			char ="&quot";
+  			break;
+  		case "&":
+  			char= "&amp";
+  			break;
+  		case "<":
+  			char= "&lt";
+  			break;
+  		case ">":
+  			char = "&rt";
+  			break;
+  			default:
+  			char = "Nothing Replaced!";
+  	}
+  });
+return newStr;
+} 
+
+
 
 
 document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"
-+uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])
++convertHTML("Dolce & Gabbana")
 + "</h3>";
 });
