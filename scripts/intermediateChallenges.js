@@ -253,38 +253,60 @@ function uniteUnique(arr) {
 }
 */
 //Convert HTML Entities
-function convertHTML(str) {
+/*function convertHTML(str) {
   // &colon;&rpar;
-  var htmlChars = /'"&<>/gi;
+  var newStr = '';
+  var htmlChars = new RegExp (/['"&<>]/, 'gi');
   debugger;
-  var newStr = str.replace(htmlChars,function(char){
+  newStr = str.replace(htmlChars,function(char){
   	switch(char){
   		case "'":
-  			char="&apos";
-  			break;
+  			return "&apos;";
   		case '"':
-  			char ="&quot";
-  			break;
+  			return "&quot;";
   		case "&":
-  			char= "&amp";
-  			break;
+  			return "&amp;";
   		case "<":
-  			char= "&lt";
-  			break;
+  			return "&lt;";	
   		case ">":
-  			char = "&rt";
-  			break;
+  			return "&gt;";
   			default:
-  			char = "Nothing Replaced!";
+  			return "Nothing Replaced!";
   	}
   });
+  console.log(newStr);
 return newStr;
 } 
+*/
+function spinalCase(str){
+var newStr = '';
 
+console.log(newStr);
+  var seperators = new RegExp (/([a-z0-9])([A-Z]), '$1 $2'/, 'gi');
+  debugger;
+  newStr = str.replace(seperators,function(char){
+  	switch(char){
+  		case " ":
+  			return "-";
+  		case '_':
+  			return "-";
+  		case "&":
+  			return "&amp;";
+  		case "<":
+  			return "&lt;";	
+  		case ">":
+  			return "&gt;";
+  			default:
+  			return char;
+  	}
 
+  });
+  console.log(newStr);
+  return newStr.toLowerCase();
+}
 
 
 document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"
-+convertHTML("Dolce & Gabbana")
++spinalCase('thisIsSpinalTap');
 + "</h3>";
 });
