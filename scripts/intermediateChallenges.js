@@ -289,22 +289,44 @@ console.log(newStr);
   newStr = str.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/[_\s]/g, '-').toLowerCase();
   return newStr;
 }*/
-function sumFibs(num) {
+
+//Sum All Odd Fibonacci Numbers
+/*function sumFibs(num) {
 	debugger;
-	if (num === 0) {
-    return 1;
-    ;
-  }
-  console.log(num)
-  return num * sumFibs(num - 1);
+var prevNumber = 0;
+var currNumber = 1;
+var result = 0;
+	while(currNumber <= num){
+		if (currNumber % 2 !==0){
+		result += currNumber;
+		}
+	var added = currNumber + prevNumber;
+	prevNumber = currNumber;
+	currNumber = added;
+	}
+	return result;
+}*/
+
+
+function sumPrimes(num) {
+	debugger;
+	var sieve = [], i, j, primes = [];
+		for (i = 2; i <= num; ++i) {
+        	if (!sieve[i]) {
+            // i has not been marked -- it is prime
+            primes.push(i);
+            for (j = i << 1; j <= num; j += i) {
+                sieve[j] = true;
+            }
+        }
+    }
+  return primes.reduce(function(a,b){
+  	return a+b;
+  });
 }
 
 
-
-
-
-
 document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"
-+sumFibs(10)
++sumPrimes(10)
 + "</h3>";
 });
