@@ -278,35 +278,33 @@ function uniteUnique(arr) {
 return newStr;
 } 
 */
-function spinalCase(str){
+//Spinal Tap Case
+/*function spinalCase(str){
 var newStr = '';
 
 console.log(newStr);
-  var seperators = new RegExp (/([a-z0-9])([A-Z]), '$1 $2'/, 'gi');
+ // var seperators = new RegExp (/([a-z0-9])([A-Z]), '$1 $2'/, 'gi');
   debugger;
-  newStr = str.replace(seperators,function(char){
-  	switch(char){
-  		case " ":
-  			return "-";
-  		case '_':
-  			return "-";
-  		case "&":
-  			return "&amp;";
-  		case "<":
-  			return "&lt;";	
-  		case ">":
-  			return "&gt;";
-  			default:
-  			return char;
-  	}
-
-  });
-  console.log(newStr);
-  return newStr.toLowerCase();
+  console.log(str.replace(/([a-z])([A-Z])/g, '$1 $2'));
+  newStr = str.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/[_\s]/g, '-').toLowerCase();
+  return newStr;
+}*/
+function sumFibs(num) {
+	debugger;
+	if (num === 0) {
+    return 1;
+    ;
+  }
+  console.log(num)
+  return num * sumFibs(num - 1);
 }
 
 
+
+
+
+
 document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"
-+spinalCase('thisIsSpinalTap');
++sumFibs(10)
 + "</h3>";
 });
