@@ -388,10 +388,62 @@ var result = 0;
 
   return quot;
 }*/
+//Finders Keepers <-- My own original code
+/*function findElement(arr, func) {
+	debugger;
+  var num = 0;
+  for (var i = 0; i<arr.length; i++){
+   if (func(arr[i])){
+     return arr[i];
+   }
+  }
+  return undefined;
+}*/
+// Drop It <-- My code, all original
+/*function dropElements(arr, func) {
+  // Drop them elements.
+  debugger;
+  var toRemove = 0;
+  for (var i=0; i<arr.length; i++){
+  	if(func(arr[i])){
+  		arr.splice(0,toRemove);
+  		return arr;
+  	}else{
+  		toRemove++;
+  	}
+  }
+ return [];
+}*/
+//Steamroller <-- #REVIEW Not my code, no credit claimed!
+/*function steamrollArray(arr) {
+  // I'm a steamroller, baby
+	var toReturn = [];
+	for(var i=0; i<arr.length; i++){
+		if(Array.isArray(arr[i])){
+			toReturn = toReturn.concat(steamrollArray(arr[i]));
+		} else {
+			toReturn.push(arr[i]);
+		}
+	} 
+	console.log(toReturn);
+	return toReturn;
+}*/
 
-
+//Binary Agents <-- My own original code
+/*function binaryAgent(str) {
+	var charCodeArr = [];
+	var finalArr = [];
+	var binArr = str.split(' ');
+	for (i=0; i<binArr.length; i++){
+		charCodeArr.push(parseInt(binArr[i],2));
+	}
+	for (var j =0; j<charCodeArr.length; j++){
+		finalArr.push(String.fromCharCode(charCodeArr[j]));
+	}
+  return finalArr.join('');
+}*/
 
 document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"
-+smallestCommons([1,5])
++binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111")
 + "</h3>";
 });
