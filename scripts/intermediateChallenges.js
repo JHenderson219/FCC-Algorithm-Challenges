@@ -236,7 +236,7 @@ whatIsInAName(
 	return false;
 }*/
 
-//Sorted Union
+//Sorted Union <-- #REVIEW Not my code, I claim no ownership
 /*
 function uniteUnique(arr) {
 	var finalArr =[];
@@ -278,7 +278,7 @@ function uniteUnique(arr) {
 return newStr;
 } 
 */
-//Spinal Tap Case
+//Spinal Tap Case <-- #REVIEW Not my code, I claim no ownership
 /*function spinalCase(str){
 var newStr = '';
 
@@ -290,7 +290,7 @@ console.log(newStr);
   return newStr;
 }*/
 
-//Sum All Odd Fibonacci Numbers
+//Sum All Odd Fibonacci Numbers <-- #REVIEW Not my code, I claim no ownership
 /*function sumFibs(num) {
 	debugger;
 var prevNumber = 0;
@@ -324,35 +324,74 @@ var result = 0;
   	return a+b;
   });
 }*/
-function gcd(x,y){
-	debugger;
-	if (y===0){
-		return x;
-	} else{
-		return gcd(y, x % y);
-	}
+//Smallest Common Multiple <-- #REVIEW Not my code, I claim no ownership
+//Variation #1 
+/*function smallestCommons(arr) {
+    arr.sort(function(a,b){
+      return a-b;
+    });
+    var min = arr[0];
+    var max = arr[1];
+    function range(a, b) {
+        var newArr = [];
+        for (var i = a; i <= b; i++) {
+            newArr.push(i);
+        }
+        return newArr.sort(function(x,y){
+          return a-b;
+        });
+    }
+
+    function gcd(a, b) {
+        return !b ? a : gcd(b, a % b);
+    }
+
+    function lcm(a, b) {
+        return (a * b) / gcd(a, b);   
+    }
+
+    var multiple = min;
+    range(min, max).forEach(function(n) {
+        multiple = lcm(multiple, n);
+    });
+
+    return multiple;
 }
-function smallestCommons(arr) {
- var range = [];
- var eucArr = [];
- var newArr = arr.sort(function(a,b){
-  	return a-b;
+}*/
+//Variation #2 <-- #REVIEW Not my code, I claim no ownership
+/*function smallestCommons(arr) {
+
+  arr.sort(function(a, b) {
+    return b - a;
   });
-  for (var i = newArr[0]; i<newArr[1]+1;i++){
-  	range.push(i);
+
+  var range = [];
+  for (var i = arr[0]; i >= arr[1]; i--) {
+    range.push(i);
   }
-  range.sort(function (a,b){
-  	return b-a;
-  });
-  //for (var j = 0;j<range.length-1; j++){
-  	eucArr.push(gcd(arr[0],arr[1]));
-  //}
-  return eucArr;
-}
+
+  var quot = 0;
+  var loop = 1;
+  var n;
+
+
+  do {
+    quot = range[0] * loop * range[1];
+    for (n = 2; n < range.length; n++) {
+      if (quot % range[n] !== 0) {
+        break;
+      }
+    }
+
+    loop++;
+  } while (n !== range.length);
+
+  return quot;
+}*/
 
 
 
 document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"
-+smallestCommons([6,24])
++smallestCommons([1,5])
 + "</h3>";
 });
