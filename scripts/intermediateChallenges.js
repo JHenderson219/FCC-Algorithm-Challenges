@@ -307,8 +307,8 @@ var result = 0;
 	return result;
 }*/
 
-
-function sumPrimes(num) {
+//Sum All Primes
+/*function sumPrimes(num) {
 	debugger;
 	var sieve = [], i, j, primes = [];
 		for (i = 2; i <= num; ++i) {
@@ -323,10 +323,36 @@ function sumPrimes(num) {
   return primes.reduce(function(a,b){
   	return a+b;
   });
+}*/
+function gcd(x,y){
+	debugger;
+	if (y===0){
+		return x;
+	} else{
+		return gcd(y, x % y);
+	}
+}
+function smallestCommons(arr) {
+ var range = [];
+ var eucArr = [];
+ var newArr = arr.sort(function(a,b){
+  	return a-b;
+  });
+  for (var i = newArr[0]; i<newArr[1]+1;i++){
+  	range.push(i);
+  }
+  range.sort(function (a,b){
+  	return b-a;
+  });
+  //for (var j = 0;j<range.length-1; j++){
+  	eucArr.push(gcd(arr[0],arr[1]));
+  //}
+  return eucArr;
 }
 
 
+
 document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"
-+sumPrimes(10)
++smallestCommons([6,24])
 + "</h3>";
 });
