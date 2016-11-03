@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() { 	
-	//Sum All Numbers in Range
+	//Sum All Numbers in Range <-- My code, all original!
 	/*var anArr = [];
 	function sumAll(arr) {
 		
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
   			return "Failed!";
 		}
 
-//Diff Two Arrays
+//Diff Two Arrays <-- My code, all original!
 	document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+sumAll([5, 10]) + "</h3>";*/
 	/*function diffArray(arr1, arr2) {
   		var newArr = [];
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]) + "</h3>";
 });*/
-//Roman Numeral Converter
+//Roman Numeral Converter <-- My code, all original!
 /*function convertToRoman(num) {
 	var romanArr= [];
 	var counter = 0;
@@ -108,7 +108,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+convertToRoman(649) + "</h3>";
 });*/
-	//Wherefore Art Thou
+	
+	//Wherefore Art Thou <-- #REVIEW Not my code, need to review concept
 	/*function whatIsInAName(collection, source) {
   // What's in a name?
   		var arr = [];
@@ -138,7 +139,8 @@ whatIsInAName(
 				{ first: "Juliet", last: "Capulet" }) 
 + "</h3>";
 });*/
-//Search and Replace
+
+//Search and Replace <-- My code, all original!
 
 /*function myReplace(str, before, after) {
   var target = str.indexOf(before); //strArr.indexOf(before)
@@ -159,7 +161,7 @@ whatIsInAName(
   return newStr;
 }*/
 
-//Pig Latin
+//Pig Latin <-- Not my code, review me! #REVIEW
 /*function translatePigLatin(str) {
   // Create variables to be used
   var pigLatin = '';
@@ -177,7 +179,7 @@ whatIsInAName(
 
   return pigLatin;
 }*/
-//DNA Pairing
+//DNA Pairing <-- My code, all original!
 /*function pairElement(str) {
   debugger;
   var startArr = str.toUpperCase().split('');
@@ -205,7 +207,7 @@ whatIsInAName(
 
   return finalArr;
 }*/
-//Missing Letters
+//Missing Letters <-- #REVIEW I think this is mine but can't remember 
 /*function fearNotLetter(str) {
 	debugger;
 	var arr = [];
@@ -227,7 +229,7 @@ whatIsInAName(
   return str;
 }*/
 
-//Boo who
+//Boo who <-- My code, all original!
 /*function booWho(bool) {
   // What is the new fad diet for ghost developers? The Boolean.
 	if(typeof bool == "boolean"){
@@ -252,7 +254,7 @@ function uniteUnique(arr) {
 	return finalArr;
 }
 */
-//Convert HTML Entities
+//Convert HTML Entities <-- My code, all original
 /*function convertHTML(str) {
   // &colon;&rpar;
   var newStr = '';
@@ -278,7 +280,7 @@ function uniteUnique(arr) {
 return newStr;
 } 
 */
-//Spinal Tap Case <-- #REVIEW Not my code, I claim no ownership
+//Spinal Tap Case <-- #REVIEW //My code, but I can do better
 /*function spinalCase(str){
 var newStr = '';
 
@@ -307,7 +309,7 @@ var result = 0;
 	return result;
 }*/
 
-//Sum All Primes
+//Sum All Primes <-- #REVIEW Not my code, I claim no credit
 /*function sumPrimes(num) {
 	debugger;
 	var sieve = [], i, j, primes = [];
@@ -443,7 +445,43 @@ var result = 0;
   return finalArr.join('');
 }*/
 
+//Everything Be True <-- My own original code
+/*function truthCheck(collection, pre) {
+  // Is everyone being true?
+  var keys = Object.keys(collection);
+  for (var i=0;i < keys.length;i++){
+  	if (collection[i][pre]){
+  	} else {
+  		return false;
+  		}
+	}
+	return true;
+}*/
+
+//Arguments Optional <-- #REVIEW Not my code, I take no credit
+function addTogether(){
+	debugger;
+	console.log(arguments.length);
+	var params = [].slice.call(arguments);
+	console.log (params);
+	if(!params.every(function(param){
+		return typeof param === "number";
+	})){
+		return undefined;
+	}
+	if(params.length===2){
+		return params[0]+params[1];
+	} else{
+		var firstParam = params[0];
+		var addOneMore = function(secondParam){
+			return addTogether (firstParam, secondParam);
+		};
+		return addOneMore;
+	}
+}
+
+
 document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"
-+binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111")
++addTogether(2)(3);
 + "</h3>";
 });
