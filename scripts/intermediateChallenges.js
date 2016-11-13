@@ -467,6 +467,7 @@ function addTogether(){
 	if(!params.every(function(param){
 		return typeof param === "number";
 	})){
+		
 		return undefined;
 	}
 	if(params.length===2){
