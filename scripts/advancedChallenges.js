@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() { 	
 function telephoneCheck(str){
 	var validFirst = /[\d()]/gi;
-	var validChars = /[0-9]/gi;
+	var validChars = /[-\d\w]/gi;
+	var invalidChars =/[-\d\w]/gi;
 	debugger;
 	for(var i = 0; i<str.length; i++){
-		if (str[i] ==! validChars){
+		if (str[i] != validChars){
 			console.log("Invalid Characters Detected! Returned False!")
 			return false
 		}
