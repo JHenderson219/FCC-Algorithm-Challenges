@@ -6,11 +6,11 @@ function telephoneCheck(str){
 	debugger;
 	for(var i = 0; i<str.length; i++){
 		if (str[i] != validChars){
-			console.log("Invalid Characters Detected! Returned False!")
-			return false
+			console.log("Invalid Characters Detected! Returned False!");
+			return false;
 		}
 	}
-console.log("Returned True!")
+console.log("Returned True!");
 return true;
 }
 
