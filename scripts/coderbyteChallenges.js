@@ -71,6 +71,30 @@ function LetterCapitalize (str){
     return finalArr.join(" ");
 }
 
+function SimpleSymbols (str){
+    debugger;
+    var letters = /[a-zA-Z]/;
+    var arr = str.split("");
+    for (var i=0;i<arr.length;i++){
+        var targetIndex;
+        var targetArr;
+        var isValid;
+        if (letters.test(arr[i])){
+            targetIndex = i;
+            if (targetIndex==0){
+                return "false";
+            }
+            targetArr = arr.splice(i-1,i+2); //add something for edge case when letter is index 0
+            if (targetArr[0]!="+"||targetArr[2]!="+"){
+                return "false";
+            }
+        }
+    }
+    return "true";
+}
+function CheckNums(num1,num2){
 
-document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+LetterCapitalize("hello world")+"</h3>";
+}
+
+document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+CheckNums(3,4)+"</h3>";
 });
