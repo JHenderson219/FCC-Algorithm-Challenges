@@ -59,8 +59,18 @@ function SimpleAdding (num){
         return num + SimpleAdding(num-1);
     }
 }
+//Capitalizes first letters of each word
+function LetterCapitalize (str){
+    var arr = str.split(" ");
+    var finalArr = [];
+    for (var i=0; i<arr.length;i++){
+        var splitWord = arr[i].split("");
+        splitWord[0] = splitWord[0].toUpperCase();
+        finalArr.push(splitWord.join(""));
+    }
+    return finalArr.join(" ");
+}
 
 
-
-document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+SimpleAdding(12)+"</h3>";
+document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+LetterCapitalize("hello world")+"</h3>";
 });
