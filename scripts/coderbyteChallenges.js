@@ -102,5 +102,35 @@ function CheckNums(num1,num2){
     }
 }
 
-document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+CheckNums(3,4)+"</h3>";
+function TimeConvert (num){
+    var hours = 0;
+    var minutes = 0;
+    while (num>0){
+        if (num>=60){
+            hours++;
+            num -= 60;
+        } else {
+            minutes++;
+            num--;
+        }
+    }
+
+    return hours+":"+minutes;
+}
+
+function AlphabetSoup (str){
+var arr = str.split("")
+var codeArr = arr.map(function(val){
+    return val.charCodeAt();
+    });
+codeArr = codeArr.sort(function(a,b){
+     return a-b;
+    });
+var finalArr = codeArr.map(function(ind){
+    return String.fromCharCode(ind);
+    });
+return finalArr.join("")
+}
+
+document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+AlphabetSoup("coderbyte")+"</h3>";
 });
