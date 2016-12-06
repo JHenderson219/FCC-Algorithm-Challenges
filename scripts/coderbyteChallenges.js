@@ -39,19 +39,17 @@ function LetterChanges (str){
             codeArr.push(arr[i]);
         } else {
             var mod = arr[i].charCodeAt()+1;
-            codeArr.push(mod);
+            mod = String.fromCharCode(mod);
+
+            if (vowels.test(mod)){
+                mod.toUpperCase();
+            }
+
+            codeArr.push(String.fromCharCode(mod));
         }
     }
-    var convertArr = codeArr.map(function(ind){
-        return String.fromCharCode(ind);
-    });
-    for (var j=0;j<convertArr.length;j++){
-        if (convertArr[j]==vowels){
-            convertArr[j].toUpperCase();
-        }
-    }
-    var newStr = convertArr.join("");
-return newStr;
+
+return codeArr.join("");
 }
 
 
