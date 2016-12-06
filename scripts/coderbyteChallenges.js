@@ -93,7 +93,13 @@ function SimpleSymbols (str){
     return "true";
 }
 function CheckNums(num1,num2){
-
+    if (num1<num2){
+        return "true";
+    } else if (num1=num2){
+        return "-1";
+    } else{
+        return "false";
+    }
 }
 
 document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+CheckNums(3,4)+"</h3>";
