@@ -28,28 +28,34 @@ function longestWord (sen){
 }
 
 function LetterChanges (str){
-    var arr = str.split("");
-    var symbols = /[-!$%#^&*()_+|~=`{}\[\]:";'<>?,.\/]/gi;
-    var numbers = /\d/gi;
+    var arr = str.toLowerCase().split("");
+    var symbols = /[-!$%#^&*()_+|~=`{}\[\]:";'<>?,.\/]/g;
+    var numbers = /[\d]/g;
+    var vowels = /[aeiou]/g;
     var codeArr = [];
-    for (var i = 0; i<arr.length-1; i++){
-        if (arr[i]===symbols){
+    debugger;
+    for (var i = 0; i<arr.length; i++){
+        if (symbols.test(arr[i]) || numbers.test(arr[i])){
             codeArr.push(arr[i]);
-        } else if (arr[i] !== numbers) {
-        codeArr.push(arr[i].charCodeAt());
+        } else {
+            var mod = arr[i].charCodeAt()+1;
+            codeArr.push(mod);
         }
     }
-    console.log (codeArr);
-    codeArr=codeArr.map(function(ind){
-        return ind+1;
+    var convertArr = codeArr.map(function(ind){
+        return String.fromCharCode(ind);
     });
-    console.log (codeArr);
-
-return str;
+    for (var j=0;j<convertArr.length;j++){
+        if (convertArr[j]==vowels){
+            convertArr[j].toUpperCase();
+        }
+    }
+    var newStr = convertArr.join("");
+return newStr;
 }
 
 
 
 
-document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+LetterChanges("hello*3")+"</h3>";
+document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+LetterChanges("hello*3z")+"</h3>";
 });
