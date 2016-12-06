@@ -27,7 +27,7 @@ function longestWord (sen){
     }
     return currentLongest;
 }
-
+//Shifts letters by one place, ignoring symbols and space. Then, capitalizes new vowels.
 function LetterChanges (str){
     var arr = str.toLowerCase().split("");
     var symbols = /[-!\s$%#^&*()_+|~=`{}\[\]:";'<>?,.\/]/;
@@ -51,9 +51,16 @@ function LetterChanges (str){
     }
 return codeArr.join("");
 }
+//Adds all numbers from 1 to given number (max 1000).
+function SimpleAdding (num){
+    if (num === 1){
+        return 1;
+    } else {
+        return num + SimpleAdding(num-1);
+    }
+}
 
 
 
-
-document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+LetterChanges("replace!*")+"</h3>";
+document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+SimpleAdding(12)+"</h3>";
 });
