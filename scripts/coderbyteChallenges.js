@@ -92,6 +92,7 @@ function SimpleSymbols (str){
     }
     return "true";
 }
+//Checks if num2 > num 1; returns -1 if equal
 function CheckNums(num1,num2){
     if (num1<num2){
         return "true";
@@ -101,7 +102,7 @@ function CheckNums(num1,num2){
         return "false";
     }
 }
-
+//Converts minutes to hours and minutes
 function TimeConvert (num){
     var hours = 0;
     var minutes = 0;
@@ -117,7 +118,7 @@ function TimeConvert (num){
 
     return hours+":"+minutes;
 }
-
+//Alphabetizes a string
 function AlphabetSoup (str){
 var arr = str.split("")
 var codeArr = arr.map(function(val){
@@ -132,5 +133,10 @@ var finalArr = codeArr.map(function(ind){
 return finalArr.join("")
 }
 
-document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+AlphabetSoup("coderbyte")+"</h3>";
+//
+function ABCheck(str){
+
+}
+
+document.getElementById("#output").innerHTML = "<h3 class = 'text-center'>"+ABCheck("coderbyte")+"</h3>";
 });
